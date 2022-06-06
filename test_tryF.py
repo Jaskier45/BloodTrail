@@ -15,6 +15,7 @@ def browser():
     print('quit browser test :/')
     browser.quit()
 
+
 class TestOpenPage:
     @pytest.mark.smoke
     def test_open(self, browser):
