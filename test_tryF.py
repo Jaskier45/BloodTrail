@@ -7,6 +7,8 @@ import time
 
 #pytest -v -s -m list .\test_tryF.py
 
+
+
 @pytest.fixture(scope = 'function')
 def browser():
     print('Start browser test ...')
@@ -14,7 +16,6 @@ def browser():
     yield browser
     print('quit browser test :/')
     browser.quit()
-
 
 class TestOpenPage:
     @pytest.mark.smoke
