@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 #pytest -v -s -m list .\test_tryF.py
-
+#--------method without scope = 'class'------
 
 
 @pytest.fixture(scope = 'function')
@@ -31,10 +31,9 @@ class TestOpenPage:
         print("End first test PogU!!!!!")
 
     @pytest.mark.smoke
-    @pytest.mark.list
+    #@pytest.mark.list
     def test_match_list(self, browser):
         print("Start second test ...")
-        #method without scope = 'class'
         browser.get("https://www.hltv.org/")
         accept_cookie = WebDriverWait(browser, 15).until(
             EC.element_to_be_clickable((By.ID,"CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"))
